@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(../images/img5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.skills{
+    position: relative;
+}
+.skills .card::after{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    background-color: rgb(165, 165, 255);
+    opacity: 1;
+}
+.skills .card:hover::after{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 1s;
+}
+.skills .card::before{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(165, 165, 255);
+    opacity: 1;
+}
+.skills .card:hover::before{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 1s;
+}
+.thankYou-card{
+    transition: 0.45s;
+    overflow: hidden;
+}
+.thankYou-card:hover{
+    transform: scale(0.5);
+    transition: 1s;
+}
+.social-medea .card-media{
+    transition: 0.45s;
+    overflow: hidden;
+    width: 210px;
+    height: 180px;
+    border: 1px solid black;
+    padding: 35px 0 0 0;
+}
+.social-medea .card-media:hover{
+    transform: scale(1.1);
+    transition: 1s;
+}
+.image-box1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60px;
+    width: 120px;
+    height: 100%;
+    background: white;
+    transform: skewX(-12deg);
+    z-index: 2;
+}
+.image-box2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -60px;
+    width: 120px;
+    height: 100%;
+    background: white;
+    transform: skewX(8deg);
+    z-index: 2;
+}
+.image-box img {
+    position: relative;
+    z-index: 1;
+    transition: 0.45s;
+    overflow: hidden;
+}
+.Learning-news:hover img{
+    transform: scale(1.5);
+    transition: 1s;
+}
+@media (max-width: 760px) {
+    .image-box::before {
+        display: none;
+    }
+    .image-box2::after{
+        display: none;
+    }
+}
