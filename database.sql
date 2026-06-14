@@ -1,0 +1,47 @@
+CREATE DATABASE IF NOT EXISTS students_system;
+USE students_system;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    level TINYINT NOT NULL,
+    major VARCHAR(100) NOT NULL,
+    image VARCHAR(255) DEFAULT NULL,
+    role TINYINT NOT NULL DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE majors (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    major_name VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE courses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    course_name VARCHAR(150) NOT NULL,
+    credits TINYINT NOT NULL,
+    major_id INT,
+    FOREIGN KEY (major_id) REFERENCES majors(id) ON DELETE SET NULL
+);
+
+CREATE TABLE enrollments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT NOT NULL,
+    course_id INT NOT NULL,
+    semester VARCHAR(20) NOT NULL,
+    grade VARCHAR(5) DEFAULT NULL,
+    FOREIGN KEY (student_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE
+);
+
+CREATE TABLE news (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(200) NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by INT,
+    FOREIGN KEY (created_by) REFERENCES users(id)
+);
