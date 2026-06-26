@@ -19,7 +19,7 @@
 1. استورد ملف `database.sql` في phpMyAdmin (قاعدة البيانات: `students_system`)
 2. ضع مجلد المشروع داخل `htdocs` (XAMPP)
 3. افتح المتصفح واذهب إلى:  
-   `http://localhost/project-3`
+   `http://localhost/student-system`
 
 ## بيانات تسجيل الدخول
 
