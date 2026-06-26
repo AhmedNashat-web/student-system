@@ -537,7 +537,7 @@ session_start();
         </div>
     </div>
     <div class="text-center">
-        <p class="text-primary">© 2025 BrightPath. All Rights Reserved. Designed & Developed By Eng. Ahmed Issa</p>
+        <p class="text-primary">© 2025 BrightPath. All Rights Reserved. Designed & Developed By Eng. Ahmed Issa & Ibrahim Al-Salibi & Ibrahim Al Aila</p>
     </div>
 </footer>
 
